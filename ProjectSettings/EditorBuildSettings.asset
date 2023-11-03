@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TyDrone.unity
+    guid: ad3a1ff85b8eb3140a2e54bcdde95daf
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ab1b67dce0e107d458b7b6b5891213f5, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: c9f18200fe51c1845b96cacc42f9ffc4, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: c6d07f48753085c4db24cb97647458e1, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2250a865e36e4924bb482924a874ccb3, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a0d9e1d8f1252fb44ac718c00197f71e, type: 2}
