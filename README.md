@@ -12,10 +12,7 @@ Navigate your Tello drone with a Mixed Reality virtual cockpit interface. A new 
   - [Meta Quest Pro](https://www.oculus.com/quest-pro/)
 
 ## Usage
-**Important Notice: Disclaimer of Warranty**
-This software is available for all users to freely utilize; however, there is no guarantee provided regarding its use. In the event that any inconvenience or damage arises from the use of this software—such as if a drone behaves unpredictably and causes damage, or if the drone itself malfunctions—the developers cannot be held responsible. Please acknowledge and accept these risks when using this software, and do so at your own responsibility.
-
-Please refer to the [Wiki](https://github.com/ototadana/TyDrone/wiki) for instructions on how to use this software.
+Please refer to the [User's Manual](https://github.com/ototadana/TyDrone/wiki/TyDrone-User's-Manual) for instructions on how to use this software.
 
 ## How to Build
 1. Clone this repository.
