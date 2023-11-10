@@ -107,7 +107,12 @@ public class CockpitHandGestureSensor : MonoBehaviour
     {
         if (!IsTracked(hand))
         {
+            hand.Visualizer.GameObjectProxy.SetActive(false);
             return HandGesture.None;
+        }
+        else
+        {
+            hand.Visualizer.GameObjectProxy.SetActive(true);
         }
 
         var indexIsStanding = IsStanding(hand, TrackedHandJoint.IndexTip, TrackedHandJoint.IndexDistalJoint, TrackedHandJoint.IndexMiddleJoint, TrackedHandJoint.Palm);

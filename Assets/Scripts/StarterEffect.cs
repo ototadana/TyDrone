@@ -20,10 +20,7 @@ public class StarterEffect : MonoBehaviour
     private Animator propellerAnimator;
 
     [SerializeField]
-    private CockpitCommandManager commandManager;
-
-    [SerializeField]
-    private CockpitEffect cockpitEffect;
+    private CockpitSwitchBoard switchBoard;
 
     private void Start()
     {
@@ -36,8 +33,7 @@ public class StarterEffect : MonoBehaviour
         Debug.Assert(message != null);
         Debug.Assert(propellerAnimator != null);
         Debug.Assert(propeller != null);
-        Debug.Assert(commandManager != null);
-        Debug.Assert(cockpitEffect != null);
+        Debug.Assert(switchBoard != null);
 
 
         messagePosition = message.transform.position;
@@ -53,8 +49,7 @@ public class StarterEffect : MonoBehaviour
     {
         propellerAnimator.SetTrigger("Takeoff");
         renderer.enabled = false;
-        commandManager.Takeoff();
-        cockpitEffect.Takeoff();
+        switchBoard.Takeoff();
         Invoke("RestoreMessagePosition", 2f);
     }
 
@@ -102,7 +97,7 @@ public class StarterEffect : MonoBehaviour
 
         return new Vector3(
           (Mathf.PerlinNoise(freq, positionPattern.x) - 0.5f) * ratio,
-          (Mathf.PerlinNoise(freq, positionPattern.y) - 0.5f) * ratio,
+          (Mathf.PerlinNoise(freq, positionPattern.y) - 0.5f) * ratio + 0.5f,
           (Mathf.PerlinNoise(freq, positionPattern.z) - 0.5f) * ratio
         );
     }
