@@ -1,11 +1,13 @@
 using Microsoft.MixedReality.Toolkit.UI;
 using UnityEngine;
 
-[RequireComponent(typeof(CockpitStickController))]
+[RequireComponent(typeof(CockpitStickController), typeof(CockpitCommandManager), typeof(CockpitEffect))]
 public class CockpitSwitchBoard : MonoBehaviour
 {
     private NgoEngine engine;
     private CockpitStickController stickController;
+    private CockpitCommandManager commandManager;
+    private CockpitEffect effect;
 
     [SerializeField]
     private Turntable turntable;
@@ -19,17 +21,25 @@ public class CockpitSwitchBoard : MonoBehaviour
     [SerializeField]
     private Interactable recordingButton;
 
+    [SerializeField]
+    private Interactable calibrateButton;
+
 
     private void Start()
     {
         engine = NgoEngine.GetInstance();
         stickController = GetComponent<CockpitStickController>();
+        commandManager = GetComponent<CockpitCommandManager>();
+        effect = GetComponent<CockpitEffect>();
 
         Debug.Assert(stickController != null);
+        Debug.Assert(commandManager != null);
+        Debug.Assert(effect != null);
         Debug.Assert(turntable != null);
         Debug.Assert(displayPositions != null);
         Debug.Assert(monitorButton != null);
         Debug.Assert(recordingButton != null);
+        Debug.Assert(calibrateButton != null);
     }
 
 
@@ -86,5 +96,13 @@ public class CockpitSwitchBoard : MonoBehaviour
             recordingButton.IsToggled = value;
             engine.SetRecording(value);
         }
+    }
+
+    public void Takeoff()
+    {
+        commandManager.Takeoff();
+        effect.Takeoff();
+        calibrateButton.IsToggled = false;
+        turntable.Calibrate = false;
     }
 }

@@ -37,7 +37,7 @@ public class CockpitOculusTouchModelController : MonoBehaviour
 
         if (OVRInput.GetDown(OVRInput.RawButton.B))
         {
-            commandManager.Takeoff();
+            switchBoard.Takeoff();
             return;
         }
 
