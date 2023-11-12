@@ -94,6 +94,7 @@ public class CockpitStickController : MonoBehaviour
             rx = ToStickValue(tello.localPosition.x);
             ry = ToStickValue(tello.localPosition.z);
             ly = ToStickValue(tello.localPosition.y);
+            ly = ly < 0f ? ly * 1.5f : ly;
         }
         else
         {
