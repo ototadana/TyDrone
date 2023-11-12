@@ -58,16 +58,17 @@ public class Turntable : MonoBehaviour
             return;
         }
 
-        var currentY = Mathf.RoundToInt(transform.rotation.eulerAngles.y);
+        var currentY = Normalize(Mathf.RoundToInt(transform.rotation.eulerAngles.y));
 
         if (target != int.MaxValue)
         {
-            if (IsSame(target, currentY))
+            if (target == currentY)
             {
                 target = int.MaxValue;
                 return;
             }
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, target, 0f), 0.5f);
+            var speed = Mathf.Abs(target - currentY) > 30f ? 10f : 1f;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0f, target, 0f), speed);
             return;
         }
 
@@ -86,7 +87,7 @@ public class Turntable : MonoBehaviour
 
             if (yaw != currentY)
             {
-                target = yaw;
+                target = Normalize(yaw);
             }
         }
     }
@@ -99,17 +100,6 @@ public class Turntable : MonoBehaviour
     public void UpdateOffset(float y)
     {
         offset = Mathf.RoundToInt(y);
-    }
-
-    private bool IsSame(int a, int b)
-    {
-        if (a == b)
-        {
-            return true;
-        }
-
-        return Normalize(a) == Normalize(b);
-
     }
 
     private int Normalize(int a)

@@ -20,7 +20,7 @@ public class VideoContainerDisplayPositions : MonoBehaviour
 
     public void Center()
     {
-        UpdateScale(4f);
+        UpdateScale(5f);
         Move(0f, 0f);
     }
 

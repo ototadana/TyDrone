@@ -17137,10 +17137,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a34776537bb1074a961d3d90ec1b386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stickController: {fileID: 0}
-  enabledAutoRotation: 0
-  lastValue: 0
-  turntable: {fileID: 1079683939}
 --- !u!1 &924872653
 GameObject:
   m_ObjectHideFlags: 0
